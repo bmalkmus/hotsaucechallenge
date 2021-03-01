@@ -19,7 +19,7 @@ const sauceReducer = (state = initialState, action) => {
         case DELETE_SAUCE: {
             const sauce = action.payload
             return produce(state, (draft) => {
-                draft.sauces = draft.sauces.filter(listSauce => listSauce.title !== sauce.title)
+                draft.sauces = draft.sauces.filter(listSauce => listSauce.id !== sauce.id)
             })
         }
         default: {

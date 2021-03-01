@@ -23,6 +23,11 @@ const routesConfig = [
     path: "/sauces/:title",
     component: lazy(()=>import("./components/details")),
   },
+  {
+    exact: true,
+    path: "/addSauce",
+    component: lazy(()=>import("./components/addSauce"))
+  }
 ]
 
 const renderRoutes = (routes) =>
