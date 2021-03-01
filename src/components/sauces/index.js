@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import {useHistory} from 'react-router-dom';
 import Card from '../card'
+import {motion} from 'framer-motion'
+import {pageVariants} from "../../constants/pageVariants"
 import "./style.css"
 
 const Sauces = () => {
@@ -12,7 +14,14 @@ const Sauces = () => {
         history.push('/addSauce')
     }
     return (
-        <div className="homeView">
+        <motion.div 
+            className="homeView"
+            initial="initial"
+            animate="in"
+            exit="out"
+            transition={{ duration: .5 }}
+            variants={pageVariants}
+        >
             <div className="titleCont">
                 <h2>HOT SAUCE LIST</h2>
                 <span onClick={()=>addSauce()}>Add a Sauce</span>
@@ -24,7 +33,7 @@ const Sauces = () => {
                 )
             })}
             </div>
-        </div>
+        </motion.div>
     )
 }
 

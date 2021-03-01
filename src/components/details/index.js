@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 import DetailsView from './detailsView';
+import {motion} from "framer-motion";
+import {pageVariants} from '../../constants/pageVariants'
+
 
 
 const Details = ({match}) => {
@@ -15,9 +18,14 @@ const Details = ({match}) => {
     const sauce = sauces.filter((sauce)=>sauce.title === title && sauce.id===id)
     console.log("lenght", sauce.length)
     return (
-        <div>
+        <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+        >
             {sauce.length===1 ? <DetailsView sauce={sauce[0]} /> : null}
-        </div>
+        </motion.div>
     )
 }
 

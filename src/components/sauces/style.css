@@ -37,5 +37,9 @@
 
 .titleCont span:hover{
     cursor: pointer;
-    text-shadow: 2px 4px 5px silver;
+    text-shadow: 2px 4px 5px yellow;
+}
+
+.titleCont span{
+    transition: all .5s;
 }

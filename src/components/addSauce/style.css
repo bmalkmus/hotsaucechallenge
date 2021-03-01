@@ -69,6 +69,10 @@
     text-shadow: 3px 4px 10px yellow;
 }
 
+.addNav span {
+    transition: all .5s;
+}
+
 .addNav svg {
     position: relative;
     top: 3px;
@@ -86,4 +90,8 @@
 #sauceBtn:hover {
     box-shadow: 1px 1px 20px white;
     cursor: pointer;
+}
+
+#sauceBtn {
+    transition: all 1s;
 }

@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import {AnimatePresence, LayoutGroupContext} from 'framer-motion';
 import Sauces from './components/sauces'
+import Loader from './components/Loader'
 
 const routesConfig = [
   {
@@ -27,29 +29,39 @@ const routesConfig = [
     exact: true,
     path: "/addSauce",
     component: lazy(()=>import("./components/addSauce"))
+  },
+  {
+    exact: true,
+    path:"/loader",
+    component: lazy(()=>import("./components/Loader"))
   }
 ]
 
+const location = window.location
+
+
 const renderRoutes = (routes) =>
    routes ? (
-      <Suspense fallback={<span>LOADING....</span>}>
+      <Suspense fallback={<Loader/>}>
         <Router>
-          <Switch>
-              {routes.map((route, i) => {
-                const Component = route.component;
+          <AnimatePresence>
+            <Switch location={location} key={location.pathname}>
+                {routes.map((route, i) => {
+                  const Component = route.component;
 
-                return (
-                    <Route
-                      key={i}
-                      path={route.path}
-                      exact={route.exact}
-                      render={(props) => (
-                          <Component {...props} />
-                      )}
-                    />
-                );
-              })}
-          </Switch>
+                  return (
+                      <Route
+                        key={i}
+                        path={route.path}
+                        exact={route.exact}
+                        render={(props) => (
+                            <Component {...props} />
+                        )}
+                      />
+                  );
+                })}
+            </Switch>
+          </AnimatePresence>
         </Router>
       </Suspense>
    ) : null;

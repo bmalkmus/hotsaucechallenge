@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import {addSauce} from '../../actions/sauceActions';
 import './style.css';
+import {pageVariants} from '../../constants/pageVariants'
+import {motion} from 'framer-motion'
 
 const SauceForm = () => {
     const id = useSelector(state=>state.sauces.count)
@@ -49,7 +51,14 @@ const SauceForm = () => {
     }
 
     return (
-        <div className="addCont">
+        <motion.div 
+            className="addCont"
+            initial="initial"
+            animate="in"
+            transition={{ duration: 1 }}
+            exit="out"
+            variants={pageVariants}
+        >
             <div className="addNav">
                 <span onClick={()=>{back()}}><IoChevronBackSharp /> Back to Hot Sauce List</span>
                 <h1>Add a Sauce</h1>
@@ -82,7 +91,7 @@ const SauceForm = () => {
             </form>
             <span id="error" ref={error} style={{visibility: "hidden"}} > ALL FIELDS MUST BE FILLED IN WITH A VALID IMAGE URL</span>
             <button id="sauceBtn" onClick={()=>infoAdd()}>ADD SAUCE</button>
-        </div>
+        </motion.div>
     )
 }
 

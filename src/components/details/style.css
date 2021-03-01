@@ -25,6 +25,14 @@
     position: relative;
     top: 20px;
 }
+.detailsNav span:hover{
+    text-shadow: 2px 2px 4px darkred;
+    cursor: pointer;
+}
+
+.detailsNav span {
+    transition: all .5s;
+}
 
 .detailsNav svg {
     position: relative;
