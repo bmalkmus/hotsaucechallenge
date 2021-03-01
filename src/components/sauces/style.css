@@ -1,5 +1,8 @@
+body{
+    background-color: black;
+}
 .homeView{
-    height: 100vh;
+    height: 100%;
     background-color: black;
 }
 
@@ -43,3 +46,19 @@
 .titleCont span{
     transition: all .5s;
 }
+
+@media screen and (max-width: 669px) {
+    .titleCont{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .titleCont span, .titleCont h2{
+        position: static;
+    }
+  }
+  @media screen and (max-width: 352px) {
+    .titleCont h2{
+        font-size: 25px;
+    }
+  }

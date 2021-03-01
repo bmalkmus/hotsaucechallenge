@@ -13,8 +13,9 @@
     justify-content: space-around;
     width: 60%;
     color: white;
-    background-color: darkgray;
+    background-color: rgb(83, 81, 81);
     border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(255, 255, 255, 0.493), 5px 5px 5px rgba(169, 169, 169, 0.493);
 }
 .formGroup {
     display: flex;
@@ -27,7 +28,7 @@
 }
 
 .formGroup input{
-    background-color: lightgrey;
+    background-color: grey;
     height: 30px;
     border: none;
     outline: none;
@@ -44,6 +45,7 @@
 #error{
     font-size: 20px;
     color:tomato;
+    margin: 5px;
 }
 .addNav{
     width: 100%;
@@ -85,6 +87,7 @@
     color: whitesmoke;
     border-radius: 5px;
     border-color: darkgrey;
+    margin: 5px;
 }
 
 #sauceBtn:hover {
