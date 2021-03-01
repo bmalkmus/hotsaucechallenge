@@ -1,0 +1,23 @@
+.homeView{
+    height: 100vh
+}
+
+#saucesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.titleCont{
+    width: 100%;
+}
+.titleCont h2{
+    font-size: 40px;
+    position: relative;
+    margin: 0;
+    left: 15%;
+    color: darkred;
+
+}

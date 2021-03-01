@@ -1,0 +1,62 @@
+.cardContainer{
+    background-color: darkgrey;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 40vh;
+    margin: 2%;
+    box-shadow: 3px 5px 10px black, 5px 6px 10px silver;
+    border-radius: 15px;
+}
+.imgCardCont {
+    height: 70%;
+    width: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: white;
+    background-position: center;
+}
+
+.cardDesc{
+    height: 30%;
+    width: 100%;
+    padding: 5px;
+}
+
+.cardDesc:hover{
+    cursor: pointer;
+}
+
+.cardDesc h2{
+    margin: 0px;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: red;
+}
+.cardDesc p {
+    word-break: break-word;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    margin: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+
+}
+.Delete{
+    position: relative;
+    left: 90%;
+    top: 10px;
+    z-index: 2;
+    color: darkred;
+}
+.Delete svg:hover{
+    cursor: pointer;
+    height: 30px;
+    width:30px;
+    position: relative;
+    right: 2px;
+    bottom: 1px;
+    color: black;
+}

@@ -1,0 +1,44 @@
+.detailsCont {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    height: 100vh;
+    color: white;
+}
+.leftCont{
+    width: 70%;
+    background-color: grey;
+}
+.rightCont{
+    width: 30%;
+    background-color: darkgray;
+}
+.detailsNav{
+    height: 25%;
+}
+.detailsNav h1{
+    font-size: 60px;
+    margin-left: 40px;
+}
+.detailsNav span{
+    font-size: 30px;
+    position: relative;
+    top: 20px;
+}
+
+.detailsNav svg {
+    position: relative;
+    top: 3px;
+}
+.detailsImg {
+    background-color: white;
+    height: 75%;
+    background-position: center;
+}
+
+.rightCont p{
+    margin: 20px;
+    word-wrap: break-word;
+    font-size: 20px;
+
+}
