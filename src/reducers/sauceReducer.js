@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { GET_SAUCE, DELETE_SAUCE, ADD_SAUCE} from "../actions/sauceActions"
+import { DELETE_SAUCE, ADD_SAUCE} from "../actions/sauceActions"
 
 const list = require("../Instructions/hotsauces.json");
 const initialState = {
