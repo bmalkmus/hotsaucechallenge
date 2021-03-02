@@ -1,26 +1,25 @@
 # Hot Sauce Challenge
 
 ## Summary
- Given a set of Data and two image files, the object was to create a two page application that renders a grid view of the data with the second page giving the individual item details. After the intitial application was built to the twoo diagrams, the instructions were to improve on the design of the application. 
+ Given a set of Data and two image files, the object was to create a two page application that renders a grid view of the data with the second page giving the individual item details. After the intitial application was built to the two diagrams, the instructions were to improve on the design of the application. 
 ## Deliverables
 - Project created with Create-React-App and Framer-Motion library for page transitions 
 - Landing Page displays all the sauces in individual cards. Clicking on "X" icon in top right deletes the Hot Sauce from the view
-- When Card is clicked, details page renders with Title, Description, and Picture. Link availble to return back to home page. 
+- When details section on card is clicked, details page renders with Title, Description, and Picture. Link availble to return back to home page. 
 - Store is managed by redux for better organization of code and functions. Makes project easier for expansion.
   - Persistant redux so user can log off and pick up right where user started
 - URL routes properly, with fallbacks and sauces not in data-set routing to ```/addSauce```
-- Third Page created to add a sauce to the list
-  - Error Handling for only proper image url. 
+- Third page created to add a sauce to the list
+  - Error handling for only proper image url. 
 - SVG animated loading screen to provide lazy load of components
 ## Instructions
-run 
-```npm run app```
-in the root directory of the application or <br>```npm install``` and then ```npm run start```
+In root directory terminal:
+- ```npm install```
+- ```npm run start```
 ## Future Development
 - Add a splash screen as first view. Login Screen possible. 
 - Use design framework to set theme of colors/spacing/font and use throughout the project. CSS styling is variable based and more reusable
 - Different font for project. Title possibly a font with a liquid effect at the end of the lettering. 
-- 
 ## Comments for Improvement of Exercise
  Not sure if this was intentional, Sriracha and Texas Pete URLs are no longer active. Possibly pictures with all matching backgrounds or Transparent.
 ## Visuals
