@@ -31,7 +31,7 @@ const Card = ({URL, title, subtitle, id, sauce}) => {
         <motion.div 
             initial="initial"
             animate="in"
-            transition={{ duration: 3 }}
+            transition={{ duration: 1 }}
             exit="out"
             whileHover={{ scale: 1.1 }}
             variants={pageVariants}
