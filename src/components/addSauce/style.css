@@ -28,7 +28,7 @@
 }
 
 .formGroup input{
-    background-color: grey;
+    background-color: rgba(173, 170, 170, 0.938);
     height: 30px;
     border: none;
     outline: none;

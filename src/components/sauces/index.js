@@ -19,7 +19,7 @@ const Sauces = () => {
             initial="initial"
             animate="in"
             exit="out"
-            transition={{ duration: .5 }}
+            transition={{ duration: 1 }}
             variants={pageVariants}
         >
             <div className="titleCont">

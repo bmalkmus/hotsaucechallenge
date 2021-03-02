@@ -29,11 +29,11 @@ const Card = ({URL, title, subtitle, id, sauce}) => {
     
     return (
         <motion.div 
-            initial="initial"
-            animate="in"
-            transition={{ duration: 1 }}
-            exit="out"
+            initial="in"
             whileHover={{ scale: 1.1 }}
+            // animate="in"
+            transition={{ duration: .2 }}
+            exit="out"
             variants={pageVariants}
             className="cardContainer"
         >

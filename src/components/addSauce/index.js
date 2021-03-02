@@ -11,8 +11,7 @@ const SauceForm = () => {
     const id = useSelector(state=>state.sauces.count)
     const dispatch = useDispatch()
     const history = useHistory();
-    console.log(id)
-    const [title, sub, description, url, error] = [React.useRef(), React.useRef(), React.useRef(), React.useRef(), React.useRef()]
+    const [title, sub, description, url, error, success] = [React.useRef(), React.useRef(), React.useRef(), React.useRef(), React.useRef(), React.useRef()]
     const Regex = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
     
 
@@ -39,15 +38,22 @@ const SauceForm = () => {
             sub.current.value="";
             description.current.value="";
             url.current.value="";
+            success.current.style.visibility="visible"
         }
         else{
             error.current.style.visibility="visible"
+            success.current.style.visibility="hidden"
         }
 
     }
 
     const back = () => {
         history.push("/sauces")
+    }
+
+    const changing = () => {
+        error.current.style.visibility="hidden"
+        success.current.style.visibility="hidden"
     }
 
     return (
@@ -68,29 +74,30 @@ const SauceForm = () => {
                     <label htmlFor={'formTitle'}>
                         Title:
                     </label>
-                    <input id="formTitle" type="text" ref={title}></input>
+                    <input id="formTitle" type="text" ref={title} onChange={()=>changing()}></input>
                 </div>
                 <div className="formGroup">
                     <label htmlFor={'formSub'}>
                         Subtitle:
                     </label>
-                    <input id="formSub" type="text" ref={sub}></input>
+                    <input id="formSub" type="text" ref={sub} onChange={()=>changing()}></input>
                 </div>
                 <div className="formGroup">
                     <label htmlFor={"formDesc"}>
                         Description:
                     </label>
-                    <input id="formDesc" type="text" ref={description}></input>
+                    <input id="formDesc" type="text" ref={description} onChange={()=>changing()}></input>
                 </div>
                 <div className="formGroup">
                     <label htmlFor={"formURL"}>
                         Image URL:
                     </label>
-                    <input id="formURL" type="text" ref={url}></input>
+                    <input id="formURL" type="text" ref={url} onChange={()=>changing()}></input>
                 </div>
             </form>
             <span id="error" ref={error} style={{visibility: "hidden"}} > ALL FIELDS MUST BE FILLED IN WITH A VALID IMAGE URL</span>
             <button id="sauceBtn" onClick={()=>infoAdd()}>ADD SAUCE</button>
+            <span id="success" ref={success} style={{visibility: "hidden", color:"green"}}>Successfully Added your Sauce!</span>
         </motion.div>
     )
 }
