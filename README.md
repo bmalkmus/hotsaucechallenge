@@ -12,6 +12,7 @@
 - Third page created to add a sauce to the list
   - Error handling for only proper image url. 
 - SVG animated loading screen to provide lazy load of components
+- Mobile Responsive
 ## Instructions
 In root directory terminal:
 - ```npm install```
