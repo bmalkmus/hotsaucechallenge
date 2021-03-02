@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import DetailsView from './detailsView';
 import {motion} from "framer-motion";
-import { BrowserRouter as Redirect } from 'react-router-dom';
+import {useHistory} from "react-router-dom";
 import {pageVariants} from '../../constants/pageVariants'
 
 
@@ -13,11 +13,14 @@ const Details = ({match}) => {
     const divider = params.indexOf(":")
     const id = parseInt(params.slice(0, divider))
     const title = params.slice(divider+1)
+    const history = useHistory();
 
     console.log(sauces)
     
     const sauce = sauces.filter((sauce)=>sauce.title === title && sauce.id===id)
-    console.log("lenght", sauce.length)
+    if(sauce.length === 0) {
+        history.push("/addSauce")
+    }
     return (
         <motion.div
             initial="initial"
@@ -25,7 +28,7 @@ const Details = ({match}) => {
             exit="out"
             variants={pageVariants}
         >
-            {sauce.length===1 ? <DetailsView sauce={sauce[0]} /> : <Redirect to="/addSauce" />}
+            {sauce.length > 0 ? <DetailsView sauce={sauce[0]} /> : null }
         </motion.div>
     )
 }
