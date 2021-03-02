@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import {AnimatePresence, LayoutGroupContext} from 'framer-motion';
+import {AnimatePresence} from 'framer-motion';
 import Sauces from './components/sauces'
 import Loader from './components/Loader'
 
@@ -34,6 +34,10 @@ const routesConfig = [
     exact: true,
     path:"/loader",
     component: lazy(()=>import("./components/Loader"))
+  },
+  {
+    path: "*",
+    component: () => <Redirect to="/sauces" />
   }
 ]
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import DetailsView from './detailsView';
 import {motion} from "framer-motion";
+import { BrowserRouter as Redirect } from 'react-router-dom';
 import {pageVariants} from '../../constants/pageVariants'
 
 
@@ -24,7 +25,7 @@ const Details = ({match}) => {
             exit="out"
             variants={pageVariants}
         >
-            {sauce.length===1 ? <DetailsView sauce={sauce[0]} /> : null}
+            {sauce.length===1 ? <DetailsView sauce={sauce[0]} /> : <Redirect to="/addSauce" />}
         </motion.div>
     )
 }
